@@ -1,0 +1,51 @@
+/* Simple 12-column grid system */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Grid columns */
+[class*="grid_"] {
+    padding: 0 15px;
+    width: 100%;
+}
+
+.grid_1 { width: 8.333%; }
+.grid_2 { width: 16.666%; }
+.grid_3 { width: 25%; }
+.grid_4 { width: 33.333%; }
+.grid_5 { width: 41.666%; }
+.grid_6 { width: 50%; }
+.grid_7 { width: 58.333%; }
+.grid_8 { width: 66.666%; }
+.grid_9 { width: 75%; }
+.grid_10 { width: 83.333%; }
+.grid_11 { width: 91.666%; }
+.grid_12 { width: 100%; }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    [class*="grid_"] {
+        width: 100%;
+    }
+}

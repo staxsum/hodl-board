@@ -1,0 +1,47 @@
+/* Responsive Design */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .dashboard-intro h2 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .dashboard-intro h2 {
+        font-size: 20px;
+    }
+    
+    .dashboard-intro p {
+        font-size: 13px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+}

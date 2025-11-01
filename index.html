@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Crypto Market Dashboard</title>
+        <meta name="description" content="Real-time cryptocurrency market dashboard with live data, charts, and analytics">
+        <meta name="keywords" content="crypto, cryptocurrency, market dashboard, bitcoin, ethereum">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+        <meta name="robots" content="noindex, nofollow">
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/darkblue.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/retina.css" />
+
+        <!-- google web fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext,cyrillic-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900,200,100' rel='stylesheet' type='text/css'>
+
+        <!-- Crypto Widget Scripts -->
+        <script src="https://www.cryptohopper.com/widgets/js/script"></script>
+
+        <style>
+            body {
+                background: linear-gradient(180deg, #0e0e0e 0%, #000000 100%);
+                min-height: 100vh;
+                padding: 20px 0;
+            }
+
+            /* Dashboard specific styles */
+            .dashboard-content {
+                background: transparent;
+                padding: 40px 0;
+            }
+            
+            .dashboard-intro {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .dashboard-intro h2 {
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            
+            .ticker-bar {
+                width: 100%;
+                height: 81px;
+                margin-bottom: 40px;
+                overflow: hidden;
+            }
+            
+            .widget-card {
+                background: linear-gradient(180deg, #090909 0%, rgba(72, 72, 72, 0.23) 100%);
+                border: 1px solid #2a2a2a;
+                border-radius: 12px;
+                padding: 30px;
+                margin-bottom: 30px;
+                min-height: 200px;
+            }
+            
+            .widget-title {
+                font-size: 20px;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            
+            .crypto-bubbles {
+                min-height: 700px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            
+            .crypto-bubbles iframe {
+                width: 100%;
+                height: 700px;
+                border: none;
+                border-radius: 8px;
+            }
+            
+            .token-section {
+                margin: 40px 0;
+            }
+            
+            .section-title {
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 40px;
+                padding: 20px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            
+            @media screen and (max-width: 768px) {
+                .ticker-bar {
+                    height: 82px;
+                }
+                
+                .crypto-bubbles {
+                    min-height: 500px;
+                }
+                
+                .crypto-bubbles iframe {
+                    height: 500px;
+                }
+
+                .widget-card {
+                    padding: 20px;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .crypto-bubbles {
+                    min-height: 400px;
+                }
+                
+                .crypto-bubbles iframe {
+                    height: 400px;
+                }
+
+                .widget-card {
+                    padding: 15px;
+                }
+
+                .widget-title {
+                    font-size: 18px;
+                }
+
+                .dashboard-content {
+                    padding: 60px 0 40px;
+                }
+            }
+        </style>
+
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+            <script src="js/selectivizr-min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <!-- .dashboard-content start -->
+        <section class="dashboard-content">
+            <!-- .container start -->
+            <div class="container">
+                
+                <!-- Dashboard Intro -->
+                <div class="dashboard-intro triggerAnimation animated" data-animate="fadeIn">
+                    <h2>Real-Time Cryptocurrency Market Intelligence</h2>
+                    <p style="color: #aaa;">Track market trends, analyze, and monitor crypto tokens</p>
+                </div>
+
+                <!-- Crypto Ticker Bar -->
+                <div class="ticker-bar triggerAnimation animated" data-animate="fadeInUp">
+                    <div class="cryptohopper-web-widget" 
+                         data-id="2" 
+                         data-chart_color="#f1a038" 
+                         data-text_color="#cecece" 
+                         data-background_color="#020202" 
+                         data-numcoins="50" 
+                         data-theme="custom" 
+                         data-realtime="on" 
+                         width="100%">
+                    </div>
+                </div>
+
+                <!-- .row start -->
+                <div class="row">
+                    <!-- Market Overview Widget -->
+                    <article class="grid_12 triggerAnimation animated" data-animate="fadeIn">
+                        <div class="widget-card">
+                            <h3 class="widget-title">Market Overview</h3>
+                            <div class="tradingview-widget-container">
+                                <div class="tradingview-widget-container__widget"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+                                {
+                                    "symbols": [
+                                        ["BINANCE:BTCUSDT|1D"],
+                                        ["BINANCE:ETHUSD|1D"],
+                                        ["BINANCE:SOLUSDT|1D"],
+                                        ["BINANCE:XRPUSDT|1D"],
+                                        ["BINANCE:ADAUSDT|1D"],
+                                        ["BINANCE:SUIUSDT|1D"]
+                                    ],
+                                    "chartOnly": false,
+                                    "width": "100%",
+                                    "height": "490",
+                                    "locale": "en",
+                                    "colorTheme": "dark",
+                                    "autosize": false,
+                                    "showVolume": false,
+                                    "showMA": false,
+                                    "hideDateRanges": false,
+                                    "hideMarketStatus": true,
+                                    "hideSymbolLogo": false,
+                                    "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                    "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                    "fontSize": "10",
+                                    "noTimeScale": false,
+                                    "valuesTracking": "1",
+                                    "changeMode": "price-and-percent",
+                                    "chartType": "area",
+                                    "maLineColor": "#2962FF",
+                                    "maLineWidth": 1,
+                                    "maLength": 9,
+                                    "headerFontSize": "medium",
+                                    "backgroundColor": "rgba(2, 2, 2, 0)",
+                                    "lineWidth": 2,
+                                    "lineType": 0,
+                                    "dateRanges": ["1d|1", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+                                }
+                                </script>
+                            </div>
+                        </div>
+                    </article>
+                </div><!-- .row end -->
+
+                <!-- .row start -->
+                <div class="row">
+                    <!-- Fear & Greed Index -->
+                    <article class="grid_6 triggerAnimation animated" data-animate="fadeInLeft">
+                        <div class="widget-card">
+                            <h3 class="widget-title">Fear & Greed Index</h3>
+                            <script async src="https://static.coinstats.app/widgets/v5/cs-widget.js"></script>
+                            <cs-widget type="fear-and-greed"
+                                width="100%"
+                                height="400px"
+                                theme="dark"
+                                direction="vertical"
+                                background="#0D0D0D"
+                                is-market-sentiment-visible="true"
+                                is-last-updated-visible="true"
+                                title-color="#FFFFFF"
+                                chart-indicator-one-color="#F02935"
+                                chart-indicator-two-color="#F07D29"
+                                chart-indicator-three-color="#9ACB82"
+                                chart-indicator-four-color="#34B349"
+                                subtitle-color="#999999"
+                                last-updated-color="#999999"
+                                arrow-color="#262626">
+                            </cs-widget>
+                        </div>
+                    </article>
+
+                    <!-- Crypto Profit Calculator -->
+                    <article class="grid_6 triggerAnimation animated" data-animate="fadeInRight">
+                        <div class="widget-card">
+                            <h3 class="widget-title">Profit Calculator</h3>
+                            <script async src="https://static.coinstats.app/widgets/v5/cs-widget.js"></script>
+                            <cs-widget type="crypto-profit-calculator"
+                                theme="dark"
+                                background="#0D0D0D"
+                                text-color="#FFFFFF"
+                                percentage-and-up="#6CCF59">
+                            </cs-widget>
+                        </div>
+                    </article>
+                </div><!-- .row end -->
+
+                <!-- .row start -->
+                <div class="row">
+                    <!-- Crypto Bubbles Visualization -->
+                    <article class="grid_12 triggerAnimation animated" data-animate="fadeIn">
+                        <div class="widget-card crypto-bubbles">
+                            <h3 class="widget-title">Market Visualization</h3>
+                            <iframe src="https://cryptobubbles.net" loading="lazy"></iframe>
+                        </div>
+                    </article>
+                </div><!-- .row end -->
+
+                <!-- Token Watchlist Section -->
+                <div class="token-section">
+                    <h2 class="section-title">HOT TOKEN WATCHLIST</h2>
+                    
+                    <!-- .row start -->
+                    <div class="row">
+                        <!-- US Based Tokens -->
+                        <article class="grid_6 triggerAnimation animated" data-animate="fadeInLeft">
+                            <div class="widget-card">
+                                <h3 class="widget-title">US Based Tokens</h3>
+                                <script src="https://widgets.coingecko.com/gecko-coin-list-widget.js"></script>
+                                <gecko-coin-list-widget 
+                                    locale="en" 
+                                    dark-mode="true" 
+                                    transparent-background="true" 
+                                    coin-ids="solana,ripple,cardano,avalanche-2,sui,chainlink,official-trump,near,hedera-hashgraph,algorand" 
+                                    initial-currency="usd">
+                                </gecko-coin-list-widget>
+                            </div>
+                        </article>
+
+                        <!-- Memes -->
+                        <article class="grid_6 triggerAnimation animated" data-animate="fadeInRight">
+                            <div class="widget-card">
+                                <h3 class="widget-title">Memes</h3>
+                                <script src="https://widgets.coingecko.com/gecko-coin-list-widget.js"></script>
+                                <gecko-coin-list-widget 
+                                    locale="en" 
+                                    dark-mode="true" 
+                                    transparent-background="true" 
+                                    coin-ids="pepe,dogwifcoin,turbo,popcat,wen-4,moo-deng,floki,dogecoin,shiba-inu,goatseus-maximus" 
+                                    initial-currency="usd">
+                                </gecko-coin-list-widget>
+                            </div>
+                        </article>
+                    </div><!-- .row end -->
+
+                    <!-- .row start -->
+                    <div class="row">
+                        <!-- RWA -->
+                        <article class="grid_6 triggerAnimation animated" data-animate="fadeInLeft">
+                            <div class="widget-card">
+                                <h3 class="widget-title">RWA</h3>
+                                <script src="https://widgets.coingecko.com/gecko-coin-list-widget.js"></script>
+                                <gecko-coin-list-widget 
+                                    locale="en" 
+                                    dark-mode="true" 
+                                    transparent-background="true" 
+                                    coin-ids="chainlink,ondo-finance,stellar,algorand,injective-protocol,quant-network,maker,maple,plume,velo" 
+                                    initial-currency="usd">
+                                </gecko-coin-list-widget>
+                            </div>
+                        </article>
+
+                        <!-- DeFi -->
+                        <article class="grid_6 triggerAnimation animated" data-animate="fadeInRight">
+                            <div class="widget-card">
+                                <h3 class="widget-title">DeFi</h3>
+                                <script src="https://widgets.coingecko.com/gecko-coin-list-widget.js"></script>
+                                <gecko-coin-list-widget 
+                                    locale="en" 
+                                    dark-mode="true" 
+                                    transparent-background="true" 
+                                    coin-ids="hyperliquid,aave,uniswap,jupiter-exchange-solana,sei-network,raydium,lido-dao,pyth-network,thorchain,telcoin" 
+                                    initial-currency="usd">
+                                </gecko-coin-list-widget>
+                            </div>
+                        </article>
+                    </div><!-- .row end -->
+
+                    <!-- .row start -->
+                    <div class="row">
+                        <!-- DePin -->
+                        <article class="grid_6 triggerAnimation animated" data-animate="fadeInLeft">
+                            <div class="widget-card">
+                                <h3 class="widget-title">DePin</h3>
+                                <script src="https://widgets.coingecko.com/gecko-coin-list-widget.js"></script>
+                                <gecko-coin-list-widget 
+                                    locale="en"
+                                    dark-mode="true" 
+                                    transparent-background="true" 
+                                    coin-ids="render-token,filecoin,the-graph,grass,helium,theta-token,theta-fuel,jasmycoin,arweave,aethir" 
+                                    initial-currency="usd">
+                                </gecko-coin-list-widget>
+                            </div>
+                        </article>
+
+                        <!-- AI -->
+                        <article class="grid_6 triggerAnimation animated" data-animate="fadeInRight">
+                            <div class="widget-card">
+                                <h3 class="widget-title">AI</h3>
+                                <script src="https://widgets.coingecko.com/gecko-coin-list-widget.js"></script>
+                                <gecko-coin-list-widget 
+                                    locale="en" 
+                                    dark-mode="true" 
+                                    transparent-background="true" 
+                                    coin-ids="bittensor,near,virtual-protocol,fetch-ai,internet-computer,kaito,origintrail,singularitynet,subsquid,zignaly" 
+                                    initial-currency="usd">
+                                </gecko-coin-list-widget>
+                            </div>
+                        </article>
+                    </div><!-- .row end -->
+                </div><!-- .token-section end -->
+
+            </div><!-- .container end -->
+        </section><!-- .dashboard-content end -->
+
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery.placeholder.min.js"></script>
+        <script src="js/modernizr.custom.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/retina-1.1.0.min.js"></script>
+        <script src="js/include.js"></script>
+    </body>
+</html>
