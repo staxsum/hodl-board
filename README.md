@@ -31,10 +31,6 @@ coin-ids="bitcoin,ethereum,solana"
 **Change chart symbols:**
 Edit the `symbols` array in the TradingView widget
 
-## Mobile Friendly
-
-Fully responsive - works great on desktop, tablet, and mobile.
-
 ## Credits
 
 Built using free widgets from:
