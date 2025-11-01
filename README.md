@@ -14,7 +14,7 @@ A simple, clean cryptocurrency market dashboard with real-time data and analytic
 ## Quick Start
 
 1. Download or clone this repo
-2. Open `crypto-dashboard.html` in your browser
+2. Open `index.html` in your browser
 3. That's it! All data loads automatically
 
 No installation, no API keys, no backend required.
