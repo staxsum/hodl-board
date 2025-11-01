@@ -1,6 +1,6 @@
 # HODL Board
 
-A simple, clean cryptocurrency market dashboard with real-time data and analytics.
+cryptocurrency market dashboard with real-time data and analytics.
 
 ## Features
 
